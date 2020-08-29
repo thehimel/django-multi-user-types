@@ -20,3 +20,20 @@ python manage.py runserver
 # Syntax: python manage.py rename <present_project_name> <new_project_name>
 python manage.py rename demo my_project
 ```
+
+## Generating SECRET_KEY
+
+### Method 1
+```bash
+python manage.py shell
+```
+```python
+from django.core.management.utils import get_random_secret_key
+
+print(get_random_secret_key())
+```
+
+### Method 2
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```

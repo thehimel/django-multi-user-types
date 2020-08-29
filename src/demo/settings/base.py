@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -106,3 +107,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 # Media files (Uploaded by the users)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# We have custom user model. Thus we need to add this.
+AUTH_USER_MODEL = "core.User"
+LOGIN_URL = "/"
+
+# Boostrap version in crispy_forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
