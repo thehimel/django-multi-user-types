@@ -41,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # For allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'core',
     'crispy_forms',
@@ -97,6 +103,40 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Auth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+# Custom allauth settings
+# Use username or email as the primary identifier
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_EMAIL_REQUIRED = True
+
+# Make email verification mandatory to avoid junk email accounts
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400  # 1 day in seconds
+LOGIN_REDIRECT_URL = '/accounts/email/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
+# LOGIN_URL = '/'
+
+EMAIL_USE_TLS = True  # This must be True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'gmail account'
+EMAIL_HOST_PASSWORD = 'gmail password'
+
+# Default sender is mandatory
+DEFAULT_FROM_EMAIL = "Multi User Types App <info@domain.com>"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -110,7 +150,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # We have custom user model. Thus we need to add this.
 AUTH_USER_MODEL = "core.User"
-LOGIN_URL = "/"
 
 # Boostrap version in crispy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
