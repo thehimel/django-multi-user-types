@@ -38,5 +38,23 @@ print(get_random_secret_key())
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
+## User Types
+A company having 2 types of users: Employee and Manager.
+
+allauth has default SignupForm, SignupView. Do not override it. Let it be remain at accounts/signup. And do not change the signup form in the settings.py for allauth - it will override the save method and won't allow our employee and manager signup views to save anything extra.
+
+We have customized the following files for the tasks below.
+core/forms.py, core/views.py, templates/core/auth/signup.html
+
+1. Employee
+Create custom signup form for employee.
+Create custom signup view for employee.
+You must use a custom template in this signup view.
+
+2. Manager
+Create custom signup form for manager.
+Create custom signup view for manager.
+You must use a custom template in this signup view.
+
 ## References
 [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
