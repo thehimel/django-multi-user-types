@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from decouple import config
 from pathlib import Path
 
-
+PROJECT_NAME = 'demo'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # Customized the BASE_DIR as changed settings.py to settings directory.
 # By this we are selecting src as BASE_DIR.
@@ -108,10 +108,13 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
 SITE_ID = 1
 
+
 # Custom allauth settings
+
+ACCOUNT_ADAPTER = f'{PROJECT_NAME}.adapter.UsernameMaxAdapter'
+
 # Use username or email as the primary identifier
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True

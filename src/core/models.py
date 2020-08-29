@@ -1,10 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from PIL import Image
+from core.appvars import EMPLOYEE, MANAGER
 
 
-EMPLOYEE = 'E'
-MANAGER = 'M'
 user_default_pro_pic = 'img/defaults/user_pro_pic.jpg'
 
 
@@ -31,6 +30,7 @@ class User(AbstractUser):
     USER_TYPE_CHOICES = [(EMPLOYEE, 'Employee'), (MANAGER, 'Manager'), ]
     GENDER_CHOICES = [('F', 'Female'), ('M', 'Male'), ('O', 'Other'), ]
 
+    # Default user_type must be defined to enforce security
     user_type = models.CharField(
         max_length=1, choices=USER_TYPE_CHOICES, default=EMPLOYEE, )
 

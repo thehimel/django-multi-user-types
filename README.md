@@ -37,3 +37,6 @@ print(get_random_secret_key())
 ```bash
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
+
+## References
+[GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
