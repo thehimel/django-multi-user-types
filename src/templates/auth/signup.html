@@ -20,18 +20,18 @@
                 {% csrf_token %}
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row mb-4">
+                <div class="form-row">
                     <div class="col">{{ form.first_name|as_crispy_field }}</div>
                     <div class="col">{{ form.last_name|as_crispy_field }}</div>
                 </div>
 
-                <div class="mb-4">{{ form.username|as_crispy_field }}</div>
+                <div>{{ form.username|as_crispy_field }}</div>
 
-                <div class="mb-4">{{ form.email|as_crispy_field }}</div>
-                <div class="mb-4">{{ form.email2|as_crispy_field }}</div>
+                <div>{{ form.email|as_crispy_field }}</div>
+                <div>{{ form.email2|as_crispy_field }}</div>
 
-                <div class="mb-4">{{ form.password1|as_crispy_field }}</div>
-                <div class="mb-4">{{ form.password2|as_crispy_field }}</div>
+                <div>{{ form.password1|as_crispy_field }}</div>
+                <div>{{ form.password2|as_crispy_field }}</div>
 
                 <!-- Redirect Field -->
                 {% if redirect_field_value %}
@@ -39,7 +39,11 @@
                 {% endif %}
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block">{% trans "Sign Up" %}</button>
+                <button type="submit" class="btn btn-info btn-block">{% trans "Sign Up" %}</button>
+
+                <hr>
+                <!-- Terms of service -->
+                <p>By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of service</a>
             </form>
 
         </section>
