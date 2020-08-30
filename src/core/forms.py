@@ -3,6 +3,7 @@ from core.appvars import (
     MANAGER, FIRST_NAME_MAX_LENGTH, LAST_NAME_MAX_LENGTH
 )
 from django import forms
+from core.models import User
 
 
 class EmployeeSignupForm(SignupForm):
@@ -37,3 +38,10 @@ class ManagerSignupForm(SignupForm):
         user.user_type = MANAGER
         user.save()
         return user
+
+
+class UserUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'gender', 'pro_pic', ]

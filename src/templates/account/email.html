@@ -29,13 +29,16 @@
 
                             {{ emailaddress.email }}
                             {% if emailaddress.verified %}
-                            <span class="verified">{% trans "Verified" %}</span>
+                            <span class=" verified badge badge-success">{% trans "Verified" %}</span>
                             {% else %}
-                            <span class="unverified">{% trans "Unverified" %}</span>
+                            <span class="unverified badge badge-danger">{% trans "Unverified" %}</span>
+                            <a name="action_send" type="submit" class="badge badge-warning">
+                                {% trans 'Re-send Verification' %}
+                            </a>
                             {% endif %}
 
                             {% if emailaddress.primary %}
-                            <span class="primary">{% trans "Primary" %}</span>
+                            <span class="primary badge badge-primary">{% trans "Primary" %}</span>
                             {% endif %}
                         </label>
                     </div>
@@ -44,9 +47,6 @@
                     <div class="btn-group mt-2" role="group" aria-label="Email Settings">
                         <button name="action_primary" type="submit" class="btn btn-primary">
                             {% trans 'Make Primary' %}
-                        </button>
-                        <button name="action_send" type="submit" class="btn btn-info">
-                            {% trans 'Re-send Verification' %}
                         </button>
                         <button name="action_remove" type="submit" class="btn btn-danger">
                             {% trans 'Remove' %}

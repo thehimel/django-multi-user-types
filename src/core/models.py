@@ -31,14 +31,15 @@ class User(AbstractUser):
     GENDER_CHOICES = [('F', 'Female'), ('M', 'Male'), ('O', 'Other'), ]
 
     # Default user_type must be defined to enforce security
-    user_type = models.CharField(
-        max_length=1, choices=USER_TYPE_CHOICES, default=EMPLOYEE, )
+    user_type = models.CharField(max_length=1,
+                                 choices=USER_TYPE_CHOICES, default=EMPLOYEE, )
 
-    gender = models.CharField(
-        max_length=1, choices=GENDER_CHOICES, )
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, )
 
-    pro_pic = models.ImageField(
-        default=user_default_pro_pic, upload_to=user_directory_path)
+    # Using verbose_name in the form.
+    pro_pic = models.ImageField(default=user_default_pro_pic,
+                                upload_to=user_directory_path,
+                                verbose_name="Profile picture")
 
     # Overriding the save method
     def save(self, *args, **kwargs):

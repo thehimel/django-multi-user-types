@@ -65,6 +65,13 @@ It was designed with the index.html file from mbd4 and allauth base.html.
 Integrate MDB4 with all the html files inside templates/account.
 The account folder is downloaded from the template directory of allauth github repository.
 
+## Important Note
+You must change the default email_confirmation_subject. Changing a little bit will be enough. Otherwise it will add [example.com] in the subject.
+
+'src\templates\account\email\email_confirmation_subject.txt'
+Default: Please Confirm Your E-mail Address
+Customized: Please Confirm The E-mail Address
+
 
 ## References
 [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
