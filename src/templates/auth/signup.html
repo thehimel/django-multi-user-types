@@ -8,24 +8,36 @@
 <main>
     <div class="container">
         <section class="mt-4 mb-4">
-            <div class='col-6 offset-3'>
-                <h1>Sign Up</h1>
-                <p>Already have an account? Then please <a href="{% url 'account_login' %}">Log In</a></p>
 
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form|crispy }}
+            <h1>Sign Up</h1>
+            <p>Already have an account? Then please <a href="{% url 'account_login' %}">Log In</a></p>
 
-                    <!-- redirect_field -->
-                    {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
+            <form method="post">
+                {% csrf_token %}
 
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-                </form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <div class="col">{{ form.first_name|as_crispy_field }}</div>
+                    <div class="col">{{ form.last_name|as_crispy_field }}</div>
+                </div>
 
-            </div>
+                <div class="mb-4">{{ form.username|as_crispy_field }}</div>
+
+                <div class="mb-4">{{ form.email|as_crispy_field }}</div>
+                <div class="mb-4">{{ form.email2|as_crispy_field }}</div>
+
+                <div class="mb-4">{{ form.password1|as_crispy_field }}</div>
+                <div class="mb-4">{{ form.password2|as_crispy_field }}</div>
+
+                <!-- Redirect Field -->
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+            </form>
+
         </section>
     </div>
 </main>
