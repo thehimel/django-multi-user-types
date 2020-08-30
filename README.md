@@ -66,6 +66,7 @@ Integrate MDB4 with all the html files inside templates/account.
 The account folder is downloaded from the template directory of allauth github repository.
 
 ## Important Note
+In the database, you must rename the site to include your site_name in emails.
 You must change the default email_confirmation_subject. Changing a little bit will be enough. Otherwise it will add [example.com] in the subject.
 
 'src\templates\account\email\email_confirmation_subject.txt'
