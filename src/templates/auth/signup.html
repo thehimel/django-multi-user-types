@@ -9,10 +9,14 @@
     <div class="container">
         <section class="mt-4 mb-4">
 
-            <h1>Sign Up</h1>
-            <p>Already have an account? Then please <a href="{% url 'account_login' %}">Log In</a></p>
+            <h1>{% trans "Sign Up" %}</h1>
+            <p>
+                {% blocktrans %}
+                Already have an account? Then please <a href="{{ login_url }}">sign in</a>.
+                {% endblocktrans %}
+            </p>
 
-            <form method="post">
+            <form class="signup" id="signup_form" method="post">
                 {% csrf_token %}
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -35,7 +39,7 @@
                 {% endif %}
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Sign Up" %}</button>
             </form>
 
         </section>
