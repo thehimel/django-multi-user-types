@@ -40,8 +40,9 @@
 
             <form class="login" method="post" action="{% url 'account_login' %}">
                 {% csrf_token %}
-                <div class="mb-4">{{ form.login|as_crispy_field }}</div>
-                <div class="mb-4">{{ form.password|as_crispy_field }}</div>
+                <div class="mb-2">
+                    {{ form| crispy }}
+                </div>
 
                 <!-- Redirect Field -->
                 {% if redirect_field_value %}
@@ -49,14 +50,15 @@
                 {% endif %}
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Sign In" %}</button>
+                <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
 
-                <a class="mb-4" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                <a class="btn btn-info" href="{% url 'account_reset_password' %}">
+                    {% trans "Forgot Password?" %}
+                </a>
 
             </form>
 
         </section>
     </div>
 </main>
-
 {% endblock %}
