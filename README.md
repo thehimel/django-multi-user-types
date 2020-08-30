@@ -56,5 +56,12 @@ Create custom signup form for manager.
 Create custom signup view for manager.
 You must use a custom template in this signup view.
 
+## Frontend
+MDB5 with Boostrap 5 is used for frontend. [Link](https://mdbootstrap.com/)
+
+> How the base.html was designed?
+It was designed with the index.html file from mdb5 and allauth base.html.
+
+
 ## References
 [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)

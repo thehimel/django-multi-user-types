@@ -9,7 +9,7 @@ class HomeView(TemplateView):
 
 
 class EmployeeSignupView(SignupView):
-    template_name = 'core/auth/signup.html'  # Custom template is mandatory
+    template_name = 'auth/signup.html'  # Custom template is mandatory
     form_class = EmployeeSignupForm
     redirect_field_name = 'next'  # Important to redirect user if has next url
 
@@ -21,7 +21,7 @@ class EmployeeSignupView(SignupView):
 
 
 class ManagerSignupView(SignupView):
-    template_name = 'core/auth/signup.html'
+    template_name = 'auth/signup.html'
     form_class = ManagerSignupForm
     redirect_field_name = 'next'  # Important to redirect user if has next url
 

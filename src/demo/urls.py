@@ -23,8 +23,8 @@ from core.views import EmployeeSignupView, ManagerSignupView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('employee/signup/', EmployeeSignupView.as_view(), name='emp-signup'),
-    path('manager/signup', ManagerSignupView.as_view(), name='man-signup'),
+    path('employee/signup/', EmployeeSignupView.as_view(), name='emp_signup'),
+    path('manager/signup', ManagerSignupView.as_view(), name='man_signup'),
     path('', include('core.urls', namespace='core')),
 ]
 
