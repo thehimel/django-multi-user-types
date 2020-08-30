@@ -60,7 +60,10 @@ You must use a custom template in this signup view.
 MDB-Free_4.19.1 with Boostrap 4 is used for frontend. [Link](https://mdbootstrap.com/docs/jquery/getting-started/download/)
 
 > How the base.html was designed?
-It was designed with the index.html file from mdb5 and allauth base.html.
+It was designed with the index.html file from mbd4 and allauth base.html.
+
+Integrate MDB4 with all the html files inside templates/account.
+The account folder is downloaded from the template directory of allauth github repository.
 
 
 ## References
