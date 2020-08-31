@@ -5,6 +5,11 @@ A Django project that illustrates the implementation of multiple types of users.
 python==3.7
 Django==3.1
 django-allauth==0.42.0
+django-crispy-forms==1.9.2
+
+mdb==4.19.1
+bootstrap==4
+
 
 ## Getting Started
 Create and activate virtual env with Miniconda and install dependencies.
@@ -64,7 +69,7 @@ You must use a custom template in this signup view.
 ## Frontend
 MDB-Free_4.19.1 with Boostrap 4 is used for frontend. [Link](https://mdbootstrap.com/docs/jquery/getting-started/download/)
 
-> How the base.html was designed?
+Design of base.html
 It was designed with the index.html file from mbd4 and allauth base.html.
 
 Integrate MDB4 with all the html files inside templates/account.
@@ -78,6 +83,15 @@ You must change the default email_confirmation_subject. Changing a little bit wi
 Default: Please Confirm Your E-mail Address
 Customized: Please Confirm The E-mail Address
 
+## Renaming the Project
+[Script]('./src/core/management/commands/rename.py')
+Command
+```bash
+python manage.py rename current_project_name new_proejct_name
+python manage.py rename demo my_project
+```
 
 ## References
 [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
+[pyblog](https://github.com/thehimel/pyblog)
+[django-boilerplate](https://github.com/thehimel/django-boilerplate)
