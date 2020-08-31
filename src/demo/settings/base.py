@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'core',
+    'users',
+
     'crispy_forms',
 ]
 
@@ -127,7 +129,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400  # 1 day in seconds
-LOGIN_REDIRECT_URL = '/profile/'
+LOGIN_REDIRECT_URL = 'users:profile'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 # LOGIN_URL = '/'
 
@@ -152,7 +154,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # We have custom user model. Thus we need to add this.
-AUTH_USER_MODEL = "core.User"
+AUTH_USER_MODEL = "users.User"
 
 # Boostrap version in crispy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
