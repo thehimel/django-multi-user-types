@@ -18,10 +18,23 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.defaults import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+
+    # With the default signup url, users can register without user_type.
+    # In our User model, we've declared EMPLOYEE as the default user_type.
+    # With this we avoid the security concern here. But we don't want to let
+    # the user register without some extra fields like First/Last Name etc.
+    # It's very important to exclude the default allauth signup url.
+    # Name for this url is account_signup and if we redefine the url
+    # to page_not_found, no one will be able to access this path.
+    # While using page_not_found, kwargs must be used with defined exception.
+    path('accounts/signup', page_not_found,
+         kwargs={'exception': Exception('Page not Found')}),
+
     path('users/', include('users.urls', namespace='users')),
 
     path('', include('core.urls', namespace='core')),
