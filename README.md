@@ -2,13 +2,13 @@
 A Django project that illustrates the implementation of multiple types of users.
 
 ## Important Package Versions
-python==3.7
-Django==3.1
-django-allauth==0.42.0
-django-crispy-forms==1.9.2
+- python==3.7
+- Django==3.1
+- django-allauth==0.42.0
+- django-crispy-forms==1.9.2
 
-mdb==4.19.1
-bootstrap==4
+- mdb==4.19.1
+- bootstrap==4
 
 
 ## Getting Started
@@ -79,12 +79,13 @@ The account folder is downloaded from the template directory of allauth github r
 In the database, you must rename the site to include your site_name in emails.
 You must change the default email_confirmation_subject. Changing a little bit will be enough. Otherwise it will add [example.com] in the subject.
 
-'src\templates\account\email\email_confirmation_subject.txt'
+'src/templates/account/email/email_confirmation_subject.txt'
 Default: Please Confirm Your E-mail Address
 Customized: Please Confirm The E-mail Address
 
 ## Renaming the Project
 [Script]('./src/core/management/commands/rename.py')
+
 Command
 ```bash
 python manage.py rename current_project_name new_proejct_name
@@ -92,6 +93,6 @@ python manage.py rename demo my_project
 ```
 
 ## References
-[GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
-[pyblog](https://github.com/thehimel/pyblog)
-[django-boilerplate](https://github.com/thehimel/django-boilerplate)
+- [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
+- [pyblog](https://github.com/thehimel/pyblog)
+- [django-boilerplate](https://github.com/thehimel/django-boilerplate)
