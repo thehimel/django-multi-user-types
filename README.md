@@ -1,6 +1,11 @@
 # django-multi-user-types
 A Django project that illustrates the implementation of multiple types of users.
 
+## Important Package Versions
+python==3.7
+Django==3.1
+django-allauth==0.42.0
+
 ## Getting Started
 Create and activate virtual env with Miniconda and install dependencies.
 ```bash
