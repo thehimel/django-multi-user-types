@@ -5,7 +5,7 @@ from users.forms.employees import EmployeeSignupForm
 # Employee Signup View
 class EmployeeSignupView(SignupView):
 
-    template_name = 'auth/signup.html'  # Custom template is mandatory
+    template_name = 'users/signup.html'  # Custom template is mandatory
     form_class = EmployeeSignupForm
     redirect_field_name = 'next'  # Important to redirect user if has next url
 

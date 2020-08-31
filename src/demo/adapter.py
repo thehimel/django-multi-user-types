@@ -1,10 +1,10 @@
 from allauth.account.adapter import DefaultAccountAdapter
 from django.forms import ValidationError
-from core.appvars import USERNAME_MAX_LENGTH
+from users.appvars import USERNAME_MAX_LENGTH
 
 
 class UsernameMaxAdapter(DefaultAccountAdapter):
-    """ To enforce username maximum length. Added ACCOUNT_ADAPTER in settings.py """
+    """ To enforce username max length. Added ACCOUNT_ADAPTER in settings """
 
     def clean_username(self, username):
         if len(username) > USERNAME_MAX_LENGTH:

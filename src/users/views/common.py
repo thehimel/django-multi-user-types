@@ -23,4 +23,4 @@ def profile(request):
         'form': form,
     }
 
-    return render(request, 'auth/profile.html', context)
+    return render(request, 'users/profile.html', context)

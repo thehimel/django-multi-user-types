@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from PIL import Image
-from core.appvars import EMPLOYEE, MANAGER
+from users.appvars import EMPLOYEE, MANAGER
 
 
 user_default_pro_pic = 'img/defaults/user_pro_pic.jpg'

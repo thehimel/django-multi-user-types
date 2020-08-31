@@ -1,5 +1,5 @@
 from allauth.account.forms import SignupForm
-from core.appvars import (
+from users.appvars import (
     FIRST_NAME_MAX_LENGTH, LAST_NAME_MAX_LENGTH, MANAGER)
 from django import forms
 

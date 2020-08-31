@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
-from core.appvars import EMPLOYEE, MANAGER
+from users.appvars import EMPLOYEE, MANAGER
 from users.decorators import employee_required, manager_required
 
 
@@ -14,7 +14,7 @@ class HomeView(TemplateView):
 @method_decorator([login_required, employee_required], name='dispatch')
 class EmployeeDashboardView(TemplateView):
 
-    template_name = 'auth/dashboard.html'
+    template_name = 'core/dashboard.html'
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -33,7 +33,7 @@ class EmployeeDashboardView(TemplateView):
 @method_decorator([login_required, manager_required], name='dispatch')
 class ManagerDashboardView(TemplateView):
 
-    template_name = 'auth/dashboard.html'
+    template_name = 'core/dashboard.html'
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

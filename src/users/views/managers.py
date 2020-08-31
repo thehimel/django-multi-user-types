@@ -5,7 +5,7 @@ from users.forms.managers import ManagerSignupForm
 # Manager Signup View
 class ManagerSignupView(SignupView):
 
-    template_name = 'auth/signup.html'
+    template_name = 'users/signup.html'
     form_class = ManagerSignupForm
     redirect_field_name = 'next'  # Important to redirect user if has next url
 
