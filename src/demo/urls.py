@@ -18,7 +18,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.views.defaults import page_not_found
+from django.views.generic.base import RedirectView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,11 +33,15 @@ urlpatterns = [
     # Name for this url is account_signup and if we redefine the url
     # to page_not_found, no one will be able to access this path.
     # While using page_not_found, kwargs must be used with defined exception.
-    path('accounts/signup', page_not_found,
-         kwargs={'exception': Exception('Page not Found')}),
+    # path('accounts/signup', page_not_found,
+    #      kwargs={'exception': Exception('Page not Found')}),
+    # We may also use RedirectView and redirect the user to users:emp_signup.
+
+    path('accounts/signup',
+         RedirectView.as_view(
+             pattern_name='users:emp_signup', permanent=False)),
 
     path('users/', include('users.urls', namespace='users')),
-
     path('', include('core.urls', namespace='core')),
 ]
 
