@@ -86,6 +86,10 @@ You must change the default email_confirmation_subject. Changing a little bit wi
 Default: Please Confirm Your E-mail Address
 Customized: Please Confirm The E-mail Address
 
+## Production Status
+Is the project production ready?
+Yes
+
 ## References
 - [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
 - [pyblog](https://github.com/thehimel/pyblog)
