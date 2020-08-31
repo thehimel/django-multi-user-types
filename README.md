@@ -26,6 +26,9 @@ python manage.py runserver
 ```
 
 ## Changing Project Name
+[Script]('./src/core/management/commands/rename.py')
+
+Command
 ```bash
 # Syntax: python manage.py rename <present_project_name> <new_project_name>
 python manage.py rename demo my_project
@@ -54,7 +57,7 @@ A company having 2 types of users: Employee and Manager.
 allauth has default SignupForm, SignupView. Do not override it. Let it be remain at accounts/signup. And do not change the signup form in the settings.py for allauth - it will override the save method and won't allow our employee and manager signup views to save anything extra.
 
 We have customized the following files for the tasks below.
-core/forms.py, core/views.py, templates/core/auth/signup.html
+users/forms/, users/views/, templates/users
 
 1. Employee
 Create custom signup form for employee.
@@ -82,15 +85,6 @@ You must change the default email_confirmation_subject. Changing a little bit wi
 'src/templates/account/email/email_confirmation_subject.txt'
 Default: Please Confirm Your E-mail Address
 Customized: Please Confirm The E-mail Address
-
-## Renaming the Project
-[Script]('./src/core/management/commands/rename.py')
-
-Command
-```bash
-python manage.py rename current_project_name new_proejct_name
-python manage.py rename demo my_project
-```
 
 ## References
 - [GFG](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/)
