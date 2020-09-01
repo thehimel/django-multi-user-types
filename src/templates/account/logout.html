@@ -22,7 +22,8 @@
                 {% endif %}
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-light">{% trans "Sign Out" %}</button>
+                <button type="submit" class="btn btn-secondary">{% trans "Sign Out" %}</button>
+                <a type="button" class="btn btn-success" href="{% url 'core:home' %}">{% trans "Home" %}</a>
             </form>
 
         </section>
