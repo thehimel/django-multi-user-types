@@ -25,8 +25,10 @@ class Command(BaseCommand):
         # logic for renaming the files
 
         # List of files to rename
-        files_to_rename = ['manage.py',
-                           f'{current_project_name}/settings/base.py', ]
+        files_to_rename = ['manage.py', ]
+
+        # files_to_rename = ['manage.py',
+        #                    f'{current_project_name}/settings/base.py', ]
 
         for f in files_to_rename:
             # Read the file and store the contents in a variable
