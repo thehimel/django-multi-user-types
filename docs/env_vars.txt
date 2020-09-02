@@ -1,6 +1,6 @@
 DATABASE_URL=your-db-url
-DEBUG=True
-SECRET_KEY=s@82y2%@o2yaep$!she$79%lwt6*bluc+^-yhw-k^6-q3-3x1t
+DEBUG=False
+SECRET_KEY=your-secret-key
 EMAIL_USER=your-email-username
 EMAIL_PASS=your-email-password
 DB_NAME=your-db-name

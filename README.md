@@ -10,6 +10,11 @@ A Django project that illustrates the implementation of multiple types of users.
 - mdb==4.19.1
 - bootstrap==4
 
+## Other Important Packages
+- psycopg2 - for managing postgres db
+- dj-database-url - for postgres db url
+- gunicorn - for running python server in heroku
+- whitenoise - to server static files by running collecstatic in heroku
 
 ## Getting Started
 Create and activate virtual env with Miniconda and install dependencies.
@@ -31,7 +36,7 @@ python manage.py runserver
 Command
 ```bash
 # Syntax: python manage.py rename <present_project_name> <new_project_name>
-python manage.py rename demo my_project
+python manage.py rename current_project my_project
 ```
 
 ## Generating SECRET_KEY

@@ -5,14 +5,14 @@ import sys
 from decouple import config
 
 
-# For Development use 'demo/settings/development.py'
-# For Production use 'demo/settings/production.py'
+# For Development use 'multiusers/settings/development.py'
+# For Production use 'multiusers/settings/production.py'
 DEBUG = config('DEBUG', cast=bool)
 
 if DEBUG:
-    SETTINGS_MODULE = 'demo.settings.development'
+    SETTINGS_MODULE = 'multiusers.settings.development'
 else:
-    SETTINGS_MODULE = 'demo.settings.production'
+    SETTINGS_MODULE = 'multiusers.settings.production'
 
 
 def main():

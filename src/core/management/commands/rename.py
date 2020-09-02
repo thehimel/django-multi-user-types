@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 """
 Command to rename the Django project.
 Usage: python manage.py rename <current_project_name> <new_project_name>
-Example: python manage.py demo my_project
+Example: python manage.py current_project my_project
 """
 
 
@@ -26,9 +26,7 @@ class Command(BaseCommand):
 
         # List of files to rename
         files_to_rename = ['manage.py',
-                           f'{current_project_name}/settings/base.py',
-                           f'{current_project_name}/wsgi.py',
-                           f'{current_project_name}/asgi.py', ]
+                           f'{current_project_name}/settings/base.py', ]
 
         for f in files_to_rename:
             # Read the file and store the contents in a variable
