@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'users',
 
     'crispy_forms',
+
+    # For django-cleanup. Must be on the bottom of INSTALLED_APPS
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

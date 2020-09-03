@@ -6,6 +6,7 @@ A Django project that illustrates the implementation of multiple types of users.
 - Django==3.1
 - django-allauth==0.42.0
 - django-crispy-forms==1.9.2
+- django-cleanup==5.0.0
 
 - mdb==4.19.1
 - bootstrap==4
@@ -15,6 +16,7 @@ A Django project that illustrates the implementation of multiple types of users.
 - dj-database-url - for postgres db url
 - gunicorn - for running python server in heroku
 - whitenoise - to server static files by running collecstatic in heroku
+- django-cleanup - to delete files when user updates a filefield
 
 ## Getting Started
 Create and activate virtual env with Miniconda and install dependencies.
@@ -82,6 +84,13 @@ It was designed with the index.html file from mbd4 and allauth base.html.
 
 Integrate MDB4 with all the html files inside templates/account.
 The account folder is downloaded from the template directory of allauth github repository.
+
+## Deletion of Files Changed by the User
+You use django-cleanup to remove files when user updates a filefiled. [Link](https://pypi.org/project/django-cleanup/)
+Files used in defaults won't get deleted.
+
+You can also use django-unused-media when you already have junk files. [Link](https://pypi.org/project/django-unused-media/)
+This is a command line tool that can delete unused files.
 
 ## Important Note
 In the database, you must rename the site to include your site_name in emails.
