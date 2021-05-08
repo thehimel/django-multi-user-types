@@ -21,8 +21,8 @@ A Django project that illustrates the implementation of multiple types of users.
 ## Getting Started
 Create and activate virtual env with Miniconda and install dependencies.
 ```bash
-conda create --name mut python=3.7
-conda activate mut
+conda create --name multi python=3.7
+conda activate multi
 pip install -r requirements.txt
 ```
 
