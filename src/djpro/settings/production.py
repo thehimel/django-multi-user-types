@@ -3,7 +3,11 @@ from .base import *
 import dj_database_url
 
 # In production, make sure environment variable DEBUG=False
-DEBUG = config('DEBUG', cast=bool)
+# If the DEBUG is not set in production, it will be False.
+try:
+    DEBUG = config('DEBUG', cast=bool)
+except Exception:
+    DEBUG = False
 
 # Include your hosts here
 ALLOWED_HOSTS = ['*']
