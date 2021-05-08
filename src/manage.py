@@ -9,9 +9,12 @@ PROJECT_NAME = 'djpro'
 
 # For Development use 'settings/development.py'
 # For Production use 'settings/production.py'
-DEBUG = config('DEBUG', cast=bool)
+try:
+    DEV = config('DEV', cast=bool)
+except Exception:
+    DEV = True
 
-if DEBUG:
+if DEV:
     SETTINGS_MODULE = f'{PROJECT_NAME}.settings.development'
 else:
     SETTINGS_MODULE = f'{PROJECT_NAME}.settings.production'
