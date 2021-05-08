@@ -1,7 +1,7 @@
 {
-    "python.pythonPath": "C:\\Users\\SANDHI\\.conda\\envs\\multi\\python.exe",
+    "python.pythonPath": "C:\\Users\\sandhi\\.conda\\envs\\multi\\python.exe",
     "python.autoComplete.extraPaths": [
-        "C:\\Users\\SANDHI\\.conda\\envs\\multi\\Lib\\site-packages"
+        "C:\\Users\\sandhi\\.conda\\envs\\multi\\Lib\\site-packages"
     ],
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
 }
