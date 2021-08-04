@@ -1,6 +1,10 @@
 # django-multi-user-types
 A Django project that illustrates the implementation of multiple types of users.
 
+## Deployment
+
+[https://multiusers.herokuapp.com/](https://multiusers.herokuapp.com/)
+
 ## Important Package Versions
 - python==3.7
 - Django==3.1
